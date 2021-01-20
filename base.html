@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Character encoding-->
+        <meta charset="utf-8">
+        <meta name="author" content="Antoine M.">
+        <meta name="description" content="Visualisation of cryptographic modifications of strings">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cryptstring</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="dependencies/base.css">
+        <script src="dependencies/scripts.js"></script>
+    </head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="img/test.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            CRYPTSTRING
+        </a>
+
+        <!-- Code for the collapsing navbar-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Elements of the navbar-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav">
+                <a class="nav-link custom-col" href="#">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <h1>CRYPTSTRING</h1>
+    <div class="text-intro">
+        A web application for the visualisation of cryptographic transformations of strings.
+    </div>
+    <div class="container container-custom">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Your string</span>
+            </div>
+            <!-- ON CHANGE TO DO-->
+            <textarea class="form-control" id="string-to-crypt" placeholder="Enter your string here" onchange="updateAnswer();"></textarea>
+        </div>
+        
+        <hr class="limit">
+        <textarea class="form-control answer" id="encrypted-string" placeholder="Encrypted string"></textarea>
+        <div class="row custom-row">
+            <div class="col-sm">
+                <!--Import file-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-secondary btn-md btn-custom" type="button" id="inputGroupFileAddon03" onclick="importList()"><i class="fas fa-upload"></i> Import</button>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="input-file" aria-describedby="inputGroupFileAddon01" accept=".json">
+                        <label class="custom-file-label" for="input-file" id="custom-file-label">Choose file to import</label>
+                    </div>
+                </div>
+                <script>addEventListenerInputFile()</script>                
+
+                <!-- Useful to read file content but won't be used-->
+                <div id="file-content" style="display: none;"></div>
+            </div>
+            <div class="col-sm">
+                <!-- Export -->
+                <button type="button" class="btn btn-secondary btn-md btn-custom" onclick="exportList()"><i class="fas fa-download"></i> Export</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+
