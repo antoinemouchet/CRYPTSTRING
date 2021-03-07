@@ -16,8 +16,8 @@
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="dependencies/base.css">
-        <script src="dependencies/scripts.js"></script>
+        <link rel="stylesheet" href="./dependencies/base.css">
+        <script src="./dependencies/scripts.js"></script>
     </head>
 <body>
     <!-- Navigation bar -->
@@ -43,23 +43,64 @@
     <div class="text-intro">
         A web application for the visualisation of cryptographic transformations of strings.
     </div>
+    
     <div class="container container-custom">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Your string</span>
-            </div>
-            <!-- ON CHANGE TO DO-->
-            <textarea class="form-control" id="string-to-crypt" placeholder="Enter your string here" onchange="updateAnswer();"></textarea>
-        </div>
         
+        <!-- Input group for string -->
+        <div class="row custom-row">
+            <div class="col-11">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Your string</span>
+                    </div>
+                    <textarea class="form-control" id="string-to-crypt" placeholder="Enter your string here"
+                        onchange="updateUI();"></textarea>
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="btn-group input-control" role="group">
+                    <button type="button" class="btn btn-info" onclick="makeLower();"><i class="fab fa-amilia"></i></button>
+                    <button type="button" class="btn btn-info" onclick="makeUpper();"><i class="fas fa-font"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="methods" class="row custom-row">
+
+        </div>
+
+        <!-- Menu with methods -->
+        <div class="row custom-row">
+            <div class="col-11">
+                <div class="btn-group btn-block btn-menu-custom">
+                    <button type="button" class="btn dropdown-toggle btn-block" data-toggle="dropdown"
+                        data-display="static" aria-haspopup="true" aria-expanded="false" id="menu-name">METHODS</button>
+                    <div class="dropdown-menu btn-block" id="methods-menu">
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                <button class="btn btn-block add-btn-custom" onclick="addMethod()"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <!-- Limit between methods and answer -->
         <hr class="limit">
-        <textarea class="form-control answer" id="encrypted-string" placeholder="Encrypted string"></textarea>
+
+        <!-- Answer -->
+        <textarea class="form-control answer" id="encrypted-string" placeholder="Encrypted string" readonly></textarea>
+
+        <!-- Import and export -->
         <div class="row custom-row">
             <div class="col-sm">
                 <!--Import file-->
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-secondary btn-md btn-custom" type="button" id="inputGroupFileAddon03" onclick="importList()"><i class="fas fa-upload"></i> Import</button>
+                        <button class="btn btn-secondary btn-md btn-custom" type="button" id="inputGroupFileAddon03" onclick="importList()">
+                            <i class="fas fa-upload"></i>
+                            Import
+                        </button>
                     </div>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="input-file" aria-describedby="inputGroupFileAddon01" accept=".json">
@@ -73,7 +114,10 @@
             </div>
             <div class="col-sm">
                 <!-- Export -->
-                <button type="button" class="btn btn-secondary btn-md btn-custom" onclick="exportList()"><i class="fas fa-download"></i> Export</button>
+                <button type="button" class="btn btn-secondary btn-md btn-custom" onclick="exportList()">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
             </div>
         </div>
     </div>

@@ -45,3 +45,72 @@ hr.limit {
     border-radius: 0.25px;
 
 }
+
+.answer:read-only{
+    background-color: #ffffff;
+}
+
+.btn-menu-custom{
+    background-color: #cfd8dc;
+    color: #7b8d93;
+    border-radius: 5px;
+}
+
+.dropdown-item:hover{
+    background-color: #cfd8dc81;
+}
+
+.add-btn-custom {
+    background-color: #7b8d93;
+    color: white;
+}
+
+.add-btn-custom:hover{
+    background-color: #6b6e6e;
+    color:white;
+}
+
+
+.status-btn-custom{
+    background-color: #cfd8dc;
+    color:black;
+    font-size: 125%;
+}
+
+.status-btn-custom:hover{
+    background-color: #a8bbc2;
+    color:black;
+}
+
+.fa-trash, .fa-font,.fa-amilia{
+    color:whitesmoke;
+}
+
+.fa-trash:hover, .fa-font:hover, .fa-amilia:hover{
+    color:whitesmoke;
+    text-decoration: none;
+}
+
+.fa-toggle-on, .fa-toggle-off{
+    color: #494949;
+}
+
+.fa-toggle-on:hover, .fa-toggle-off:hover{
+    color: #494949;
+    text-decoration: none;
+}
+
+.first-row{
+    font-size: 110%;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.input-control{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
