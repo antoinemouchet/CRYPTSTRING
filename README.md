@@ -1,6 +1,6 @@
 # 2021_INFOB318_CRYPTSTRING
 
-This repository contains the whole work for my individual project of BAC3 at UNamur.
+This repository contains the whole work for my individual project of BAC3 at UNamur. I was supervised by Jean-Noel Colin, teacher at UNamur and member of the InfoSec research team.
 
 ## Code
 
